@@ -1,24 +1,12 @@
-# pathify-demo
+# Vuex Pathify Simple Demo
 
-## Project setup
-```
-npm install
-```
+Demo to show basic Vuex Pathify operation.
 
-### Compiles and hot-reloads for development
-```
+Install and run:
+
+```bash
+npm i
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+View at [http://localhost:8080](http://localhost:8080).
