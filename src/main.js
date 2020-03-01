@@ -1,8 +1,15 @@
 import Vue from 'vue'
-import App from './App.vue'
+import store from './store'
+import App from './App'
+import './assets/styles.css'
 
-Vue.config.productionTip = false
-
-new Vue({
+// objects
+window.store = store
+window.app = new Vue({
+  store,
   render: h => h(App)
 }).$mount('#app')
+
+// debug
+console.log('computed:', App.computed)
+console.log('mutations:', store._mutations)

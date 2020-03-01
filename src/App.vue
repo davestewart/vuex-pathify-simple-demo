@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img width="600" src="./assets/logo.png">
+    <div>
+      <h1>{{ message }}</h1>
+      <input v-model="greeting" placeholder="Greeting">
+      <input v-model="name" placeholder="Name">
+      <button @click="greet">Greet</button>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { get, sync, call } from 'vuex-pathify'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  computed: {
+    message: get('message'),
+    ...sync('*')
+  },
+
+  methods: call([
+    'greet'
+  ])
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
