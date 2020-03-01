@@ -16,7 +16,10 @@ import { get, sync, call } from 'vuex-pathify'
 export default {
   computed: {
     message: get('demo/message'),
-    ...sync('demo/*')
+    ...sync('demo', [
+      'greeting',
+      'name'
+    ])
   },
 
   methods: call('demo', [
